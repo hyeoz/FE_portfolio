@@ -11,9 +11,10 @@ import gs from "../images/github.jpg";
 const Wrapper = styled.div`
   /* background-color: #fce5cd; */
   display: grid;
-  margin: auto;
-  margin-bottom: 20px;
+  margin: 0 auto;
+  /* margin-bottom: 20px; */
   text-align: center;
+  justify-content: center;
   width: 400px;
   height: 400px;
   grid-template-columns: repeat(4, 1fr);
@@ -86,9 +87,9 @@ const Wrapper = styled.div`
   }
 `;
 
-const SkillStack = () => {
+const SkillStack = ({ skillRef }) => {
   return (
-    <>
+    <div ref={skillRef}>
       <h1
         style={{
           position: "relative",
@@ -108,7 +109,7 @@ const SkillStack = () => {
         <span>{/* <img src={reactt} /> */}</span>
         <span>{/* <img src={gs} /> */}</span>
       </Wrapper>
-    </>
+    </div>
   );
 };
 

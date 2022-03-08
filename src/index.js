@@ -7,6 +7,11 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <App />
+      <footer
+        style={{ margin: "20px", fontFamily: "'Black Han Sans', sans-serif" }}
+      >
+        &copy; HYEOZ {new Date().getFullYear()}
+      </footer>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

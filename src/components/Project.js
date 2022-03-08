@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 10px;
-  font-family: "Gothic A1", sans-serif;
+  font-family: "Staatliches", cursive;
 
   // style clear
   a {
@@ -42,12 +42,13 @@ const PythonBlock = styled(Block)`
   position: relative;
   svg {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 40%;
   }
   h1 {
     opacity: 0;
     font-size: 2rem;
+    margin: 0;
     position: absolute;
     top: 30%;
   }
@@ -63,7 +64,6 @@ const PythonBlock = styled(Block)`
 `;
 const Contents = styled.div`
   /* display: flex; */
-  /* overflow-x: scroll; */
   img {
     width: 100%;
     transition: width 0.1s;
@@ -77,9 +77,9 @@ const Text = styled.div`
   }
 `;
 
-const Project = () => {
+const Project = ({ projectRef }) => {
   return (
-    <>
+    <div ref={projectRef}>
       <h1
         style={{
           position: "relative",
@@ -91,9 +91,9 @@ const Project = () => {
       </h1>
 
       <Wrapper>
-        <Block href="/movie">
+        <Block href={`${process.env.PUBLIC_URL}/movie`}>
           <Contents>
-            <img src={movie_project} />
+            <img src={movie_project} alt="" />
             <Text>
               <h3>#JavaScript #React #CSS #NodeJS #Axios</h3>
               <p>
@@ -105,9 +105,9 @@ const Project = () => {
             </Text>
           </Contents>
         </Block>
-        <Block href="/buycircle">
+        <Block href={`${process.env.PUBLIC_URL}/buycircle`}>
           <Contents>
-            <img src={buycircle_home} />
+            <img src={buycircle_home} alt="" />
             <Text>
               <h3>#JavaScript #React #Firebase #ReactHooks</h3>
               <p>
@@ -119,9 +119,9 @@ const Project = () => {
             </Text>
           </Contents>
         </Block>
-        <Block href="/my_page">
+        <Block href={`${process.env.PUBLIC_URL}/my_page`}>
           <Contents>
-            <img src={my_page_home} />
+            <img src={my_page_home} alt="" />
             <Text>
               <h3>#JavaScript #React #ReactHooks #Redux</h3>
               <p>
@@ -136,11 +136,14 @@ const Project = () => {
           href="https://www.notion.so/Project-0975bb9dc65f47d59c2a43d452fa0518"
           target="_blank"
         >
+          <h1>
+            Another Data Analysis project is{" "}
+            <span style={{ color: "#e06666" }}>Here!</span>
+          </h1>
           <PieChart size={40} />
-          <h1>And Another Data Analysis project is Here!</h1>
         </PythonBlock>
       </Wrapper>
-    </>
+    </div>
   );
 };
 

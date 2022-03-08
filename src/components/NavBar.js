@@ -6,7 +6,8 @@ const Wrapper = styled.header`
   /* border: 1px solid grey; */
   display: flex;
   position: fixed;
-  width: 99%;
+  z-index: 1;
+  width: 100%;
   margin: auto 0;
   font-family: "Staatliches", cursive;
   // style clear
@@ -45,7 +46,7 @@ const Text = styled.div`
   h1 {
     margin-left: 1rem;
     &:hover {
-      color: red;
+      color: #e06666;
       cursor: pointer;
     }
   }
@@ -71,7 +72,7 @@ const Icon = styled.div`
   }
 `;
 
-const NavBar = () => {
+const NavBar = ({ infoClick, projectClick, skillClick }) => {
   return (
     <Wrapper>
       <Logo>
@@ -80,14 +81,14 @@ const NavBar = () => {
       </Logo>
       <Nav>
         <Text>
-          <h1>Info</h1>
-          <h1>Project</h1>
-          <h1>Skill</h1>
+          <h1 onClick={infoClick}>Info</h1>
+          <h1 onClick={projectClick}>Project</h1>
+          <h1 onClick={skillClick}>Skill</h1>
         </Text>
         <Icon>
-          <Mail size={30} />
-          <Monitor size={30} />
-          <Archive size={30} />
+          <Mail onClick={infoClick} size={30} />
+          <Monitor onClick={projectClick} size={30} />
+          <Archive onClick={skillClick} size={30} />
         </Icon>
       </Nav>
     </Wrapper>
