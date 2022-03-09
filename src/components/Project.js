@@ -38,9 +38,20 @@ const Block = styled(Link)`
     transition: width 1s;
   }
 `;
-const PythonBlock = styled(Block)`
+const PythonBlock = styled.a`
+  margin: auto;
+  text-align: center;
+  border: 1px solid #eeeeee;
+  border-radius: 15px;
+  height: 30rem;
+  margin: 10px;
+  box-shadow: 10px 10px 10px #eeeeee;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+  transition: width 1s;
   width: 10rem;
   position: relative;
+
   svg {
     position: absolute;
     top: 45%;
@@ -93,7 +104,7 @@ const Project = ({ projectRef }) => {
       </h1>
 
       <Wrapper>
-        <Block to="movie">
+        <Block to="/movie">
           <Contents>
             <img src={movie_project} alt="" />
             <Text>
@@ -107,7 +118,7 @@ const Project = ({ projectRef }) => {
             </Text>
           </Contents>
         </Block>
-        <Block to="buycircle">
+        <Block to="/buycircle">
           <Contents>
             <img src={buycircle_home} alt="" />
             <Text>
@@ -121,7 +132,7 @@ const Project = ({ projectRef }) => {
             </Text>
           </Contents>
         </Block>
-        <Block to="my_page">
+        <Block to="/my_page">
           <Contents>
             <img src={my_page_home} alt="" />
             <Text>
