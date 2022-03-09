@@ -3,6 +3,7 @@ import movie_project from "../images/movie_home.png";
 import my_page_home from "../images/my_page_home.png";
 import buycircle_home from "../images/buycircle.png";
 import { PieChart } from "react-feather";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   display: flex;
@@ -16,7 +17,7 @@ const Wrapper = styled.div`
     color: inherit;
   }
 `;
-const Block = styled.a`
+const Block = styled(Link)`
   margin: auto;
   text-align: center;
   border: 1px solid #eeeeee;
@@ -92,7 +93,7 @@ const Project = ({ projectRef }) => {
       </h1>
 
       <Wrapper>
-        <Block href={`${process.env.REACT_APP_PUBLIC_URL}/movie`}>
+        <Block to="movie">
           <Contents>
             <img src={movie_project} alt="" />
             <Text>
@@ -106,7 +107,7 @@ const Project = ({ projectRef }) => {
             </Text>
           </Contents>
         </Block>
-        <Block href={`${process.env.REACT_APP_PUBLIC_URL}/buycircle`}>
+        <Block to="buycircle">
           <Contents>
             <img src={buycircle_home} alt="" />
             <Text>
@@ -120,7 +121,7 @@ const Project = ({ projectRef }) => {
             </Text>
           </Contents>
         </Block>
-        <Block href={`${process.env.REACT_APP_PUBLIC_URL}/my_page`}>
+        <Block to="my_page">
           <Contents>
             <img src={my_page_home} alt="" />
             <Text>
