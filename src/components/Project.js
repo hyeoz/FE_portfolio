@@ -82,8 +82,9 @@ const Project = ({ projectRef }) => {
     <div ref={projectRef}>
       <h1
         style={{
-          position: "relative",
-          left: "10%",
+          // position: "relative",
+          // left: "10%",
+          paddingLeft: "10%",
           fontFamily: "'Staatliches', cursive",
         }}
       >
@@ -91,7 +92,7 @@ const Project = ({ projectRef }) => {
       </h1>
 
       <Wrapper>
-        <Block href={`${process.env.PUBLIC_URL}/movie`}>
+        <Block href={`${process.env.REACT_APP_PUBLIC_URL}/movie`}>
           <Contents>
             <img src={movie_project} alt="" />
             <Text>
@@ -105,7 +106,7 @@ const Project = ({ projectRef }) => {
             </Text>
           </Contents>
         </Block>
-        <Block href={`${process.env.PUBLIC_URL}/buycircle`}>
+        <Block href={`${process.env.REACT_APP_PUBLIC_URL}/buycircle`}>
           <Contents>
             <img src={buycircle_home} alt="" />
             <Text>
@@ -119,7 +120,7 @@ const Project = ({ projectRef }) => {
             </Text>
           </Contents>
         </Block>
-        <Block href={`${process.env.PUBLIC_URL}/my_page`}>
+        <Block href={`${process.env.REACT_APP_PUBLIC_URL}/my_page`}>
           <Contents>
             <img src={my_page_home} alt="" />
             <Text>

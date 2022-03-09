@@ -92,8 +92,9 @@ const SkillStack = ({ skillRef }) => {
     <div ref={skillRef}>
       <h1
         style={{
-          position: "relative",
-          left: "10%",
+          // position: "relative",
+          // left: "10%",
+          paddingLeft: "10%",
           fontFamily: "'Staatliches', cursive",
         }}
       >
