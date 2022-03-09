@@ -16,6 +16,7 @@ const Wrapper = styled.div`
   display: flex;
   margin: auto 0;
   margin-top: 2.5rem;
+  height: auto;
   /* font-family: "Noto Sans KR", sans-serif; */
   font-family: "Do Hyeon", sans-serif;
 
@@ -46,6 +47,9 @@ const StyledSlide = styled(Slider)`
 const InfoBlock = styled.ul`
   margin-left: 10px;
   padding: 30px;
+  position: sticky;
+  top: 0;
+  height: 540px;
   /* border-left: 1px solid #eeeeee; */
   list-style: none;
   li {

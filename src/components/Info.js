@@ -74,20 +74,20 @@ const Contact = styled.div`
       visibility: hidden;
       position: absolute;
       &.tooltip_mail {
-        left: 42%;
+        /* left: 42%; */
       }
       &.tooltip_github {
-        left: 43.7%;
+        /* left: 43.7%; */
       }
       &.tooltip_blog {
-        left: 47%;
+        /* left: 47%; */
       }
 
       &::after {
         content: "";
         position: absolute;
         top: -60%;
-        right: 20%;
+        left: 13%;
         border-width: 10px;
         border-style: solid;
         border-color: transparent transparent rgba(0, 0, 0, 0.7) transparent;
