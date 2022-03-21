@@ -2,11 +2,13 @@ import styled from "styled-components";
 import movie_project from "../images/movie_home.png";
 import my_page_home from "../images/my_page_home.png";
 import buycircle_home from "../images/buycircle.png";
+import mm_home from "../images/mm_account.png";
 import { PieChart } from "react-feather";
 import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
   justify-content: center;
   margin-top: 10px;
   font-family: "Staatliches", cursive;
@@ -16,26 +18,30 @@ const Wrapper = styled.div`
     text-decoration: none;
     color: inherit;
   }
+
+  .block .odd {
+    justify-content: end;
+  }
 `;
 const Block = styled(Link)`
   margin: auto;
   text-align: center;
+  background-color: white;
   border: 1px solid #eeeeee;
   border-radius: 15px;
-  width: 20rem;
+  width: auto;
   height: 30rem;
   margin: 10px;
   box-shadow: 10px 10px 10px #eeeeee;
   overflow: hidden;
-  transition: box-shadow 0.3s;
-  transition: width 1s;
+  transition: all 1s;
 
   &:hover {
-    width: 30rem;
+    transform: scale(1.3);
+    z-index: 999;
     box-shadow: 10px 10px 10px #bcbcbc;
     font-size: 1.5rem;
-    transition: box-shadow 0.3s;
-    transition: width 1s;
+    transition: all 1s;
   }
 `;
 const PythonBlock = styled.a`
@@ -51,6 +57,8 @@ const PythonBlock = styled.a`
   transition: width 1s;
   width: 10rem;
   position: relative;
+  grid-column: 7 / 8;
+  grid-row: 2 / 3;
 
   svg {
     position: absolute;
@@ -104,7 +112,11 @@ const Project = ({ projectRef }) => {
       </h1>
 
       <Wrapper>
-        <Block to="/movie">
+        <Block
+          to="/movie"
+          style={{ gridColumn: "3/5", gridRow: "2/3" }}
+          className="block odd"
+        >
           <Contents>
             <img src={movie_project} alt="" />
             <Text>
@@ -118,7 +130,7 @@ const Project = ({ projectRef }) => {
             </Text>
           </Contents>
         </Block>
-        <Block to="/buycircle">
+        <Block to="/buycircle" style={{ gridColumn: "5/7", gridRow: "1/2" }}>
           <Contents>
             <img src={buycircle_home} alt="" />
             <Text>
@@ -132,7 +144,7 @@ const Project = ({ projectRef }) => {
             </Text>
           </Contents>
         </Block>
-        <Block to="/my_page">
+        <Block to="/my_page" style={{ gridColumn: "5/7", gridRow: "2/3" }}>
           <Contents>
             <img src={my_page_home} alt="" />
             <Text>
@@ -145,9 +157,23 @@ const Project = ({ projectRef }) => {
             </Text>
           </Contents>
         </Block>
+        <Block
+          to="/mm_project"
+          style={{ gridColumn: "3/5", gridRow: "1/2" }}
+          className="block odd"
+        >
+          <Contents>
+            <img src={mm_home} alt="" />
+            <Text>
+              <h3>#JavaScript #React #Bootstrap #AWS #Firebase</h3>
+              <p>Real estate brokerage Platform Admin Page</p>
+            </Text>
+          </Contents>
+        </Block>
         <PythonBlock
           href="https://www.notion.so/Project-0975bb9dc65f47d59c2a43d452fa0518"
           target="_blank"
+          className="python"
         >
           <h1>
             Another Data Analysis project is{" "}
