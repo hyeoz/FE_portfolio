@@ -1,14 +1,19 @@
 import styled from "styled-components";
 import movie_project from "../images/movie_home.png";
 import my_page_home from "../images/my_page_home.png";
-import buycircle_home from "../images/buycircle.png";
+import buycircle_home from "../images/hwitter_home.png";
 import mm_home from "../images/mm_account.png";
 import { PieChart } from "react-feather";
 import { Link } from "react-router-dom";
 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  /* display: grid;
+  grid-template-columns: repeat(8, 1fr); */
+  display: flex;
   justify-content: center;
   margin-top: 10px;
   font-family: "Staatliches", cursive;
@@ -23,13 +28,30 @@ const Wrapper = styled.div`
     justify-content: end;
   }
 `;
+
+const StyledSlide = styled(Slider)`
+  /* border: 1px solid red; */
+  padding: 10px;
+  width: 60%;
+  margin: auto 0;
+  margin-left: 30px;
+  margin-right: 30px;
+
+  button.slick-prev::before {
+    color: grey;
+  }
+  button.slick-next::before {
+    color: grey;
+  }
+`;
+
 const Block = styled(Link)`
   margin: auto;
   text-align: center;
   background-color: white;
   border: 1px solid #eeeeee;
   border-radius: 15px;
-  width: auto;
+  width: 20%;
   height: 30rem;
   margin: 10px;
   box-shadow: 10px 10px 10px #eeeeee;
@@ -55,10 +77,11 @@ const PythonBlock = styled.a`
   overflow: hidden;
   transition: box-shadow 0.3s;
   transition: width 1s;
-  width: 10rem;
+  width: 10%;
   position: relative;
-  grid-column: 7 / 8;
-  grid-row: 2 / 3;
+  /* grid-column: 7 / 8;
+  grid-row: 2 / 3; */
+  transition: all 1s;
 
   svg {
     position: absolute;
@@ -73,7 +96,11 @@ const PythonBlock = styled.a`
     top: 30%;
   }
   &:hover {
-    width: 15rem;
+    /* width: 15rem; */
+    transform: scale(1.3);
+    transition: all 1s;
+    z-index: 999;
+
     h1 {
       opacity: 100;
     }
@@ -113,24 +140,23 @@ const Project = ({ projectRef }) => {
 
       <Wrapper>
         <Block
-          to="/movie"
-          style={{ gridColumn: "3/5", gridRow: "2/3" }}
+          to="/mm_project"
+          // style={{ gridColumn: "3/5", gridRow: "1/2" }}
           className="block odd"
         >
           <Contents>
-            <img src={movie_project} alt="" />
+            <img src={mm_home} alt="" />
             <Text>
-              <h3>#JavaScript #React #CSS #NodeJS #Axios</h3>
-              <p>
-                {/* yts.mx 의 영화 평점 API를 활용하여 특정 평점 이상 영화들의
-                평점과 러닝타임, 장르, 줄거리 등의 정보를 확인할 수 있는
-                어플리케이션. */}
-                Movie Information Application
-              </p>
+              <h3>#JavaScript #React #Bootstrap #AWS #Firebase</h3>
+              <p>Real estate brokerage Platform Admin Page</p>
             </Text>
           </Contents>
         </Block>
-        <Block to="/buycircle" style={{ gridColumn: "5/7", gridRow: "1/2" }}>
+
+        <Block
+          to="/buycircle"
+          // style={{ gridColumn: "5/7", gridRow: "1/2" }}
+        >
           <Contents>
             <img src={buycircle_home} alt="" />
             <Text>
@@ -144,7 +170,10 @@ const Project = ({ projectRef }) => {
             </Text>
           </Contents>
         </Block>
-        <Block to="/my_page" style={{ gridColumn: "5/7", gridRow: "2/3" }}>
+        <Block
+          to="/my_page"
+          // style={{ gridColumn: "5/7", gridRow: "2/3" }}
+        >
           <Contents>
             <img src={my_page_home} alt="" />
             <Text>
@@ -158,15 +187,20 @@ const Project = ({ projectRef }) => {
           </Contents>
         </Block>
         <Block
-          to="/mm_project"
-          style={{ gridColumn: "3/5", gridRow: "1/2" }}
+          to="/movie"
+          // style={{ gridColumn: "3/5", gridRow: "2/3" }}
           className="block odd"
         >
           <Contents>
-            <img src={mm_home} alt="" />
+            <img src={movie_project} alt="" />
             <Text>
-              <h3>#JavaScript #React #Bootstrap #AWS #Firebase</h3>
-              <p>Real estate brokerage Platform Admin Page</p>
+              <h3>#JavaScript #React #CSS #NodeJS #Axios</h3>
+              <p>
+                {/* yts.mx 의 영화 평점 API를 활용하여 특정 평점 이상 영화들의
+                평점과 러닝타임, 장르, 줄거리 등의 정보를 확인할 수 있는
+                어플리케이션. */}
+                Movie Information Application
+              </p>
             </Text>
           </Contents>
         </Block>

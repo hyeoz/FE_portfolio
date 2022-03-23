@@ -5,6 +5,7 @@ import memoji from "../images/memoji.jpeg";
 const Block = styled.div`
   background-color: #ffe599;
   /* border-bottom: 2px solid black; */
+  width: 100%;
   text-align: center;
   padding-top: 40px;
   font-family: "Black Han Sans", sans-serif;
@@ -22,7 +23,7 @@ const Introduce = styled.div`
     top: 20%;
     h3 {
       margin: 0;
-      font-size: 3rem;
+      font-size: 300%;
     }
     .before_img {
       position: relative;

@@ -2,9 +2,10 @@ import Slider from "react-slick";
 import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import register from "../images/hwitter.png";
 import post from "../images/hwitter_post.png";
 import login from "../images/hwitter_login.png";
-import home from "../images/hwitter.png";
+import home from "../images/hwitter_home.png";
 import mypage from "../images/hwitter_mypage.png";
 import fb from "../images/firebase.png";
 import reactt from "../images/images.png";
@@ -116,6 +117,7 @@ const BuycircleProject = () => {
           autoplay="true"
           autoplaySpeed="100"
         >
+          <img src={register} alt="" />
           <img src={login} alt="" />
           <img src={home} alt="" />
           <img src={post} alt="" />
